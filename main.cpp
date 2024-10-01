@@ -2,7 +2,12 @@
 
 using namespace std;
 
-int main() {
+// we can't invoke functions if they are declared after main function because compiler does not recognize them
+// we can declare functions before
+
+void basics(string parameter) {
+
+    cout<<parameter<<endl;
 
     string name;
     int age;
@@ -74,6 +79,11 @@ int main() {
         }
 
     }while (guess != num);
+}
+
+int main() {
+
+    basics("parameter");
 
     return 0;
 }
