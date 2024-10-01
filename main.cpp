@@ -17,7 +17,7 @@ int main() {
     getline(cin >> ws,name);
 
 
-    cout << "Hello " <<name << endl;
+    cout << "Hello " << name << endl;
     cout << "You are " << age << " years old." << endl;
 
     // some string methods
@@ -47,6 +47,33 @@ int main() {
     name.erase(0,8);
 
     cout << name << endl;
+
+    // NUMBER GUESSING GAME
+
+    // to generate a random number
+    srand(time(NULL));
+
+    // generate a number between 1 and 100
+    int num = (rand() % 100) + 1;
+    int guess;
+    int tries = 0;
+
+    cout << "NUMBER GUESSING GAME" << endl;
+
+    do {
+        cout << "Enter a guess between (1-100): " << endl;
+        cin >> guess;
+        tries++;
+
+        if(guess > num) {
+            cout << "Your guess is too high!!" << endl;
+        }else if(guess < num) {
+            cout << "Your guess is too low!!" << endl;
+        }else {
+            cout << "Your guess is correct!! # of tries " << tries << endl;
+        }
+
+    }while (guess != num);
 
     return 0;
 }
