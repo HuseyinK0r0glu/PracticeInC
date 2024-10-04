@@ -1,4 +1,7 @@
 #include <iostream>
+#include <iomanip>
+
+// iomanip provides input/output manipulators that control the format of input and output operations
 
 using namespace std;
 
@@ -79,6 +82,11 @@ void basics(string parameter) {
         }
 
     }while (guess != num);
+
+    // setprecision(2) is for two decimal places
+    // fixed forces floating-point output to be in fixed-point notation
+    double balance = 123;
+    cout << "Your balance is $" << setprecision(2) << fixed << balance << endl;
 }
 
 int main() {
