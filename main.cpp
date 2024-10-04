@@ -10,6 +10,7 @@ using namespace std;
 
 void basics(string parameter) {
 
+    /*
     cout<<parameter<<endl;
 
     string name;
@@ -87,6 +88,23 @@ void basics(string parameter) {
     // fixed forces floating-point output to be in fixed-point notation
     double balance = 123;
     cout << "Your balance is $" << setprecision(2) << fixed << balance << endl;
+    */
+
+    // ---------------ARRAYS---------------
+
+    // if we are not assigning values right away we need to set the size of the array
+    string cars[] = {"Corvette","Mustang","Camry"};
+
+    for(int i = 0;i<sizeof(cars) / sizeof(cars[0]);i++) {
+        cout << cars[i] << endl;
+    }
+
+    // sizeof() determines the size in bytes of a : variable,data type,class,objects
+
+    string name = "Bro";
+    cout << sizeof(name) << endl;
+    
+
 }
 
 int main() {
