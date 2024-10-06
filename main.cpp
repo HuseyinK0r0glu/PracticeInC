@@ -3,6 +3,9 @@
 
 // iomanip provides input/output manipulators that control the format of input and output operations
 
+// we need to declare functions before the main
+double getTotal(double prices[],int size);
+
 using namespace std;
 
 // we can't invoke functions if they are declared after main function because compiler does not recognize them
@@ -99,17 +102,45 @@ void basics(string parameter) {
         cout << cars[i] << endl;
     }
 
+    // we could do it like that too
+    for(int i = 0;i<size(cars);i++) {
+        cout << cars[i] << endl;
+    }
+
+    // foreach loop
+
     // sizeof() determines the size in bytes of a : variable,data type,class,objects
 
     string name = "Bro";
     cout << sizeof(name) << endl;
-    
+
+    string students[] = {"Spongebob","Patrick","Squidward"};
+
+    for(string student : students) {
+        cout << student << endl;
+    }
 
 }
 
 int main() {
 
-    basics("parameter");
+    //basics("parameter");
+
+    double prices[] = {49.99,15.05,75,0.99};
+    int size = sizeof(prices) / sizeof(prices[0]);
+    double total = getTotal(prices,size);
+    cout << total << endl;
 
     return 0;
+}
+
+double getTotal(double prices[],int size) {
+
+    double total = 0;
+
+    for(int i = 0;i<size;i++) {
+        total += prices[i];
+    }
+
+    return total;
 }
